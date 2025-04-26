@@ -1,5 +1,5 @@
 import { Button } from "@/components/ui/button";
-import { ArrowRight, Zap, Image as ImageIcon, DollarSign, MessagesSquare } from "lucide-react";
+import { ArrowRight, Zap, Image as ImageIcon, DollarSign } from "lucide-react";
 import { 
   Carousel, 
   CarouselContent, 
@@ -30,10 +30,7 @@ const HeroSection = ({ onContactClick }: HeroSectionProps) => {
 
   // Иконка Telegram
   const TelegramIcon = () => (
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-      <path d="M21.99 6.58c-.15-.71-.72-1.25-1.44-1.34C19.59 5.08 16.5 4.5 12 4.5s-7.59.58-8.55.74c-.72.09-1.29.63-1.44 1.34C1.82 7.69 1.5 9.75 1.5 12c0 2.25.32 4.31.51 5.42.15.71.72 1.25 1.44 1.34.96.16 4.05.74 8.55.74s7.59-.58 8.55-.74c.72-.09 1.29-.63 1.44-1.34.19-1.11.51-3.17.51-5.42 0-2.25-.32-4.31-.51-5.42z"></path>
-      <path d="M9.75 14.25l1.5 1.5 3-3"></path>
-    </svg>
+    <img src="https://cdn.poehali.dev/files/660bc550-01fb-4be0-be7c-576aeeac262e.svg" alt="Telegram" className="w-5 h-5" />
   );
 
   return (
@@ -88,7 +85,7 @@ const HeroSection = ({ onContactClick }: HeroSectionProps) => {
           
           <div className="flex-1">
             <div className="mb-2 text-center text-sm text-gray-500">
-              Примеры сгенерированных изображений за <span className="font-bold">1 рубль</span> (1000×1000 пикс.)
+              Примеры сгенерированных изображений за <span className="font-bold">1 рубль</span>
             </div>
             <Carousel className="w-full max-w-[600px] mx-auto">
               <CarouselContent>

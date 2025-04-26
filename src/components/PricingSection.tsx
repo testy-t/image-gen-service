@@ -8,10 +8,7 @@ interface PricingSectionProps {
 const PricingSection = ({ onContactClick }: PricingSectionProps) => {
   // Иконка Telegram
   const TelegramIcon = () => (
-    <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-      <path d="M22 2L11 13"></path>
-      <path d="M22 2l-7 20-4-9-9-4 20-7z"></path>
-    </svg>
+    <img src="https://cdn.poehali.dev/files/660bc550-01fb-4be0-be7c-576aeeac262e.svg" alt="Telegram" className="w-5 h-5" />
   );
 
   return (
