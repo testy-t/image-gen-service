@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 import { Tabs, TabsList, TabsTrigger, TabsContent } from "@/components/ui/tabs";
 import { Zap, Coins, Image, Sparkles, Shield, BarChart3 } from "lucide-react";
-import { motion, AnimatePresence } from "framer-motion";
 
 const FeaturesTabsSection = () => {
   const [activeTab, setActiveTab] = useState("speed");
@@ -79,42 +78,36 @@ const FeaturesTabsSection = () => {
               ))}
             </TabsList>
             
-            <div className="mt-8 bg-white rounded-xl shadow-lg p-6 md:p-8">
-              <AnimatePresence mode="wait">
-                {activeFeature && (
-                  <motion.div
-                    key={activeFeature.id}
-                    initial={{ opacity: 0, y: 20 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    exit={{ opacity: 0, y: -20 }}
-                    transition={{ duration: 0.3 }}
-                    className="flex flex-col md:flex-row gap-8 items-center"
-                  >
-                    <div className="flex-1">
-                      <div className="flex items-center gap-3 mb-4">
-                        <div className="bg-[#9b87f5]/10 p-3 rounded-xl">
-                          {activeFeature.icon}
-                        </div>
-                        <h3 className="text-2xl font-bold">{activeFeature.title}</h3>
+            <div className="mt-8 bg-white rounded-xl shadow-lg p-6 md:p-8 overflow-hidden">
+              {activeFeature && (
+                <div 
+                  key={activeFeature.id}
+                  className="flex flex-col md:flex-row gap-8 items-center animate-fadeIn"
+                >
+                  <div className="flex-1">
+                    <div className="flex items-center gap-3 mb-4">
+                      <div className="bg-[#9b87f5]/10 p-3 rounded-xl">
+                        {activeFeature.icon}
                       </div>
-                      
-                      <p className="text-gray-600 mb-4">
-                        {activeFeature.description}
-                      </p>
+                      <h3 className="text-2xl font-bold">{activeFeature.title}</h3>
                     </div>
                     
-                    <div className="flex-1">
-                      <div className="rounded-xl overflow-hidden shadow-md">
-                        <img 
-                          src={activeFeature.imageUrl} 
-                          alt={activeFeature.title}
-                          className="w-full h-48 md:h-64 object-cover"
-                        />
-                      </div>
+                    <p className="text-gray-600 mb-4">
+                      {activeFeature.description}
+                    </p>
+                  </div>
+                  
+                  <div className="flex-1">
+                    <div className="rounded-xl overflow-hidden shadow-md">
+                      <img 
+                        src={activeFeature.imageUrl} 
+                        alt={activeFeature.title}
+                        className="w-full h-48 md:h-64 object-cover"
+                      />
                     </div>
-                  </motion.div>
-                )}
-              </AnimatePresence>
+                  </div>
+                </div>
+              )}
             </div>
           </Tabs>
         </div>
