@@ -3,22 +3,22 @@ import { Tabs, TabsList, TabsTrigger, TabsContent } from "@/components/ui/tabs";
 import { Zap, Coins, Image, Sparkles, Shield, BarChart3 } from "lucide-react";
 
 const FeaturesTabsSection = () => {
-  const [activeTab, setActiveTab] = useState("speed");
+  const [activeTab, setActiveTab] = useState("economy");
   
   const features = [
-    {
-      id: "speed",
-      title: "Скорость",
-      description: "Генерируйте уникальные изображения за считанные секунды вместо часов ожидания работы дизайнера. Автоматизация процесса позволяет мгновенно получать готовые результаты для любых маркетинговых кампаний.",
-      icon: <Zap size={32} className="text-[#9b87f5]" />,
-      imageUrl: "https://cdn.poehali.dev/files/26041d01-9221-4b43-aecf-0e81d9298494.png"
-    },
     {
       id: "economy",
       title: "Экономия",
       description: "Существенное снижение затрат на создание визуального контента - всего 1 рубль за мегапиксель, без скрытых платежей и комиссий. Заказ фотосессии или работа дизайнера обойдется в десятки тысяч рублей, а генерация стоит копейки.",
       icon: <Coins size={32} className="text-[#9b87f5]" />,
       imageUrl: "https://cdn.poehali.dev/files/17447968-8ba9-4cc6-94f6-e5501187f927.png"
+    },
+    {
+      id: "speed",
+      title: "Скорость",
+      description: "Генерируйте уникальные изображения за считанные секунды вместо часов ожидания работы дизайнера. Автоматизация процесса позволяет мгновенно получать готовые результаты для любых маркетинговых кампаний.",
+      icon: <Zap size={32} className="text-[#9b87f5]" />,
+      imageUrl: "https://cdn.poehali.dev/files/26041d01-9221-4b43-aecf-0e81d9298494.png"
     },
     {
       id: "uniqueness",
@@ -46,7 +46,7 @@ const FeaturesTabsSection = () => {
       title: "Масштабируемость",
       description: "Нет ограничений по объему и количеству запросов. Нуждаетесь в сотне изображений или в тысяче? Система справится с любой нагрузкой и объемом заказов, поддерживая ваши самые амбициозные маркетинговые кампании.",
       icon: <BarChart3 size={32} className="text-[#9b87f5]" />,
-      imageUrl: "https://images.unsplash.com/photo-1534143826428-c657f89f8fed?q=80&w=1000&auto=format&fit=crop"
+      imageUrl: "https://cdn.poehali.dev/files/bfdc3d6d-31ea-4e1c-af96-ab13c4303c0e.png"
     }
   ];
   
@@ -64,7 +64,7 @@ const FeaturesTabsSection = () => {
         </div>
         
         <div className="max-w-5xl mx-auto">
-          <Tabs defaultValue="speed" value={activeTab} onValueChange={setActiveTab} className="w-full">
+          <Tabs defaultValue="economy" value={activeTab} onValueChange={setActiveTab} className="w-full">
             <TabsList className="grid grid-cols-3 md:grid-cols-6 gap-2 bg-transparent p-0 mb-12">
               {features.map((feature) => (
                 <TabsTrigger 
@@ -97,12 +97,12 @@ const FeaturesTabsSection = () => {
                     </p>
                   </div>
                   
-                  <div className="flex-1">
-                    <div className="rounded-xl overflow-hidden shadow-md">
+                  <div className="flex-1 flex justify-center">
+                    <div className="w-full max-w-[320px] aspect-square rounded-xl overflow-hidden shadow-md">
                       <img 
                         src={activeFeature.imageUrl} 
                         alt={activeFeature.title}
-                        className="w-full h-48 md:h-64 object-contain bg-[#f7f9fc]"
+                        className="w-full h-full object-contain bg-[#f7f9fc]"
                       />
                     </div>
                   </div>
