@@ -34,23 +34,47 @@ const HeroSection = ({ onContactClick }: HeroSectionProps) => {
   );
 
   return (
-    <section className="py-16 md:py-24">
+    <section className="py-8 md:py-24">
       <div className="container mx-auto px-4">
-        <div className="flex flex-col md:flex-row items-center gap-12">
+        <div className="flex flex-col md:flex-row items-center gap-8 md:gap-12">
+          {/* Карусель для мобильных устройств (показывается вверху) */}
+          <div className="w-full md:hidden mb-6">
+            <div className="text-center text-sm text-gray-500 mb-2">
+              Примеры сгенерированных изображений за <span className="font-bold">1 рубль</span>
+            </div>
+            <Carousel className="w-full max-w-[400px] mx-auto">
+              <CarouselContent>
+                {carouselImages.map((image, index) => (
+                  <CarouselItem key={index}>
+                    <div className="p-1">
+                      <div className="rounded-xl overflow-hidden shadow-xl">
+                        <img 
+                          src={image.url} 
+                          alt={image.alt} 
+                          className="w-full object-cover aspect-square"
+                        />
+                      </div>
+                    </div>
+                  </CarouselItem>
+                ))}
+              </CarouselContent>
+              <div className="flex justify-center mt-2 gap-2">
+                <CarouselPrevious className="static translate-y-0 -ml-0" />
+                <CarouselNext className="static translate-y-0 -mr-0" />
+              </div>
+            </Carousel>
+          </div>
+          
           <div className="flex-1">
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6">
+            <h1 className="text-3xl md:text-5xl lg:text-6xl font-bold mb-4 md:mb-6 text-center md:text-left">
               Оптовый Flux в России, <span className="text-[#9b87f5]">1 ₽</span> за мегапиксель
             </h1>
-            <p className="text-lg md:text-xl mb-4 text-gray-700">
-              RussFlux — сервис для мгновенной генерации уникальных изображений по текстовому запросу.
-            </p>
-            <p className="text-lg mb-8 text-gray-700 bg-[#F0F7FF] p-3 rounded-lg border border-[#E0EEFF]">
-              Картинка 1000×1000 пикселей = <span className="font-bold text-[#9b87f5]">1 рубль</span>
-            </p>
-            <div className="flex flex-col sm:flex-row gap-4">
+            
+            {/* Кнопки - сразу после заголовка для мобильных */}
+            <div className="flex flex-col sm:flex-row gap-3 mb-6 md:mb-8">
               <Button 
                 size="lg"
-                className="bg-[#9b87f5] hover:bg-[#7E69AB] text-white flex items-center gap-2"
+                className="bg-[#9b87f5] hover:bg-[#7E69AB] text-white flex items-center justify-center gap-2 w-full sm:w-auto"
                 onClick={() => window.open('https://t.me/qanelph', '_blank')}
               >
                 <TelegramIcon />
@@ -59,7 +83,7 @@ const HeroSection = ({ onContactClick }: HeroSectionProps) => {
               <Button 
                 size="lg" 
                 variant="outline"
-                className="border-[#9b87f5] text-[#9b87f5] flex items-center gap-2"
+                className="border-[#9b87f5] text-[#9b87f5] flex items-center justify-center gap-2 w-full sm:w-auto"
                 onClick={() => document.getElementById('features')?.scrollIntoView({ behavior: 'smooth' })}
               >
                 <ArrowRight size={18} />
@@ -67,7 +91,15 @@ const HeroSection = ({ onContactClick }: HeroSectionProps) => {
               </Button>
             </div>
             
-            <div className="flex flex-wrap gap-6 mt-12">
+            {/* Описание и цена - после кнопок */}
+            <p className="text-lg md:text-xl mb-4 text-gray-700 text-center md:text-left">
+              RussFlux — сервис для мгновенной генерации уникальных изображений по текстовому запросу.
+            </p>
+            <p className="text-lg mb-6 text-gray-700 bg-[#F0F7FF] p-3 rounded-lg border border-[#E0EEFF] text-center md:text-left">
+              Картинка 1000×1000 пикселей = <span className="font-bold text-[#9b87f5]">1 рубль</span>
+            </p>
+            
+            <div className="flex flex-wrap justify-center md:justify-start gap-6 mt-4 md:mt-12">
               <div className="flex items-center gap-2">
                 <Zap className="text-[#9b87f5]" />
                 <span>Мгновенная генерация</span>
@@ -83,31 +115,34 @@ const HeroSection = ({ onContactClick }: HeroSectionProps) => {
             </div>
           </div>
           
-          <div className="flex-1">
-            <div className="mb-2 text-center text-sm text-gray-500">
-              Примеры сгенерированных изображений за <span className="font-bold">1 рубль</span>
-            </div>
-            <Carousel className="w-full max-w-[600px] mx-auto">
-              <CarouselContent>
-                {carouselImages.map((image, index) => (
-                  <CarouselItem key={index}>
-                    <div className="p-1">
-                      <div className="rounded-xl overflow-hidden shadow-xl transform hover:scale-[1.01] transition-transform">
-                        <img 
-                          src={image.url} 
-                          alt={image.alt} 
-                          className="w-full object-cover aspect-square"
-                        />
-                      </div>
-                    </div>
-                  </CarouselItem>
-                ))}
-              </CarouselContent>
-              <div className="flex justify-center mt-4 gap-2">
-                <CarouselPrevious className="static translate-y-0 -ml-0" />
-                <CarouselNext className="static translate-y-0 -mr-0" />
+          {/* Карусель для десктопов (показывается справа) */}
+          <div className="hidden md:flex-1 md:flex">
+            <div className="w-full">
+              <div className="mb-2 text-center text-sm text-gray-500">
+                Примеры сгенерированных изображений за <span className="font-bold">1 рубль</span>
               </div>
-            </Carousel>
+              <Carousel className="w-full max-w-[600px] mx-auto">
+                <CarouselContent>
+                  {carouselImages.map((image, index) => (
+                    <CarouselItem key={index}>
+                      <div className="p-1">
+                        <div className="rounded-xl overflow-hidden shadow-xl transform hover:scale-[1.01] transition-transform">
+                          <img 
+                            src={image.url} 
+                            alt={image.alt} 
+                            className="w-full object-cover aspect-square"
+                          />
+                        </div>
+                      </div>
+                    </CarouselItem>
+                  ))}
+                </CarouselContent>
+                <div className="flex justify-center mt-4 gap-2">
+                  <CarouselPrevious className="static translate-y-0 -ml-0" />
+                  <CarouselNext className="static translate-y-0 -mr-0" />
+                </div>
+              </Carousel>
+            </div>
           </div>
         </div>
       </div>
