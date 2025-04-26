@@ -37,40 +37,39 @@ const HeroSection = ({ onContactClick }: HeroSectionProps) => {
     <section className="py-8 md:py-24">
       <div className="container mx-auto px-4">
         <div className="flex flex-col md:flex-row items-center gap-8 md:gap-12">
-          {/* Карусель для мобильных устройств (показывается вверху) */}
-          <div className="w-full md:hidden mb-6">
-            <div className="text-center text-sm text-gray-500 mb-2">
-              Примеры сгенерированных изображений за <span className="font-bold">1 рубль</span>
-            </div>
-            <Carousel className="w-full max-w-[400px] mx-auto">
-              <CarouselContent>
-                {carouselImages.map((image, index) => (
-                  <CarouselItem key={index}>
-                    <div className="p-1">
-                      <div className="rounded-xl overflow-hidden shadow-xl">
-                        <img 
-                          src={image.url} 
-                          alt={image.alt} 
-                          className="w-full object-cover aspect-square"
-                        />
-                      </div>
-                    </div>
-                  </CarouselItem>
-                ))}
-              </CarouselContent>
-              <div className="flex justify-center mt-2 gap-2">
-                <CarouselPrevious className="static translate-y-0 -ml-0" />
-                <CarouselNext className="static translate-y-0 -mr-0" />
-              </div>
-            </Carousel>
-          </div>
-          
           <div className="flex-1">
+            {/* Заголовок идет первым */}
             <h1 className="text-3xl md:text-5xl lg:text-6xl font-bold mb-4 md:mb-6 text-center md:text-left">
               Оптовый Flux в России, <span className="text-[#9b87f5]">1 ₽</span> за мегапиксель
             </h1>
             
-            {/* Кнопки - сразу после заголовка для мобильных */}
+            {/* Карусель для мобильных устройств (после заголовка) */}
+            <div className="w-full md:hidden mb-6 relative">
+              <Carousel className="w-full max-w-[400px] mx-auto">
+                <CarouselContent>
+                  {carouselImages.map((image, index) => (
+                    <CarouselItem key={index}>
+                      <div className="p-1">
+                        <div className="rounded-xl overflow-hidden shadow-xl">
+                          <img 
+                            src={image.url} 
+                            alt={image.alt} 
+                            className="w-full object-cover aspect-square"
+                          />
+                        </div>
+                      </div>
+                    </CarouselItem>
+                  ))}
+                </CarouselContent>
+                <CarouselPrevious className="absolute left-0 top-1/2 -translate-y-1/2 bg-white/80 hover:bg-white" />
+                <CarouselNext className="absolute right-0 top-1/2 -translate-y-1/2 bg-white/80 hover:bg-white" />
+              </Carousel>
+              <div className="text-center text-sm text-gray-500 mt-2">
+                Примеры сгенерированных изображений за <span className="font-bold">1 рубль</span>
+              </div>
+            </div>
+            
+            {/* Кнопки */}
             <div className="flex flex-col sm:flex-row gap-3 mb-6 md:mb-8">
               <Button 
                 size="lg"
@@ -117,10 +116,7 @@ const HeroSection = ({ onContactClick }: HeroSectionProps) => {
           
           {/* Карусель для десктопов (показывается справа) */}
           <div className="hidden md:flex-1 md:flex">
-            <div className="w-full">
-              <div className="mb-2 text-center text-sm text-gray-500">
-                Примеры сгенерированных изображений за <span className="font-bold">1 рубль</span>
-              </div>
+            <div className="w-full relative">
               <Carousel className="w-full max-w-[600px] mx-auto">
                 <CarouselContent>
                   {carouselImages.map((image, index) => (
@@ -137,11 +133,12 @@ const HeroSection = ({ onContactClick }: HeroSectionProps) => {
                     </CarouselItem>
                   ))}
                 </CarouselContent>
-                <div className="flex justify-center mt-4 gap-2">
-                  <CarouselPrevious className="static translate-y-0 -ml-0" />
-                  <CarouselNext className="static translate-y-0 -mr-0" />
-                </div>
+                <CarouselPrevious className="absolute left-0 top-1/2 -translate-y-1/2 bg-white/80 hover:bg-white" />
+                <CarouselNext className="absolute right-0 top-1/2 -translate-y-1/2 bg-white/80 hover:bg-white" />
               </Carousel>
+              <div className="text-center text-sm text-gray-500 mt-4">
+                Примеры сгенерированных изображений за <span className="font-bold">1 рубль</span>
+              </div>
             </div>
           </div>
         </div>
