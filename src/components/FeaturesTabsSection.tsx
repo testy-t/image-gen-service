@@ -11,14 +11,14 @@ const FeaturesTabsSection = () => {
       title: "Экономия",
       description: "Существенное снижение затрат на создание визуального контента - всего 1 рубль за мегапиксель, без скрытых платежей и комиссий. Заказ фотосессии или работа дизайнера обойдется в десятки тысяч рублей, а генерация стоит копейки.",
       icon: <Coins size={32} className="text-[#9b87f5]" />,
-      imageUrl: "https://cdn.poehali.dev/files/17447968-8ba9-4cc6-94f6-e5501187f927.png"
+      imageUrl: "https://cdn.poehali.dev/files/26041d01-9221-4b43-aecf-0e81d9298494.png" // Поменял изображение
     },
     {
       id: "speed",
       title: "Скорость",
       description: "Генерируйте уникальные изображения за считанные секунды вместо часов ожидания работы дизайнера. Автоматизация процесса позволяет мгновенно получать готовые результаты для любых маркетинговых кампаний.",
       icon: <Zap size={32} className="text-[#9b87f5]" />,
-      imageUrl: "https://cdn.poehali.dev/files/26041d01-9221-4b43-aecf-0e81d9298494.png"
+      imageUrl: "https://cdn.poehali.dev/files/17447968-8ba9-4cc6-94f6-e5501187f927.png" // Поменял изображение
     },
     {
       id: "uniqueness",
@@ -65,18 +65,20 @@ const FeaturesTabsSection = () => {
         
         <div className="max-w-5xl mx-auto">
           <Tabs defaultValue="economy" value={activeTab} onValueChange={setActiveTab} className="w-full">
-            <TabsList className="grid grid-cols-3 md:grid-cols-6 gap-3 bg-transparent p-0 mb-8">
-              {features.map((feature) => (
-                <TabsTrigger 
-                  key={feature.id} 
-                  value={feature.id}
-                  className="flex flex-col items-center py-3 px-2 data-[state=active]:bg-white data-[state=active]:text-[#9b87f5] data-[state=active]:shadow-md rounded-lg transition-all gap-2"
-                >
-                  <div className="text-2xl">{feature.icon}</div>
-                  <span className="text-xs font-medium">{feature.title}</span>
-                </TabsTrigger>
-              ))}
-            </TabsList>
+            <div className="mb-16">
+              <TabsList className="grid grid-cols-3 md:grid-cols-6 gap-3 bg-transparent p-0">
+                {features.map((feature) => (
+                  <TabsTrigger 
+                    key={feature.id} 
+                    value={feature.id}
+                    className="flex flex-col items-center py-3 px-2 data-[state=active]:bg-white data-[state=active]:text-[#9b87f5] data-[state=active]:shadow-md rounded-lg transition-all gap-2"
+                  >
+                    <div className="text-2xl">{feature.icon}</div>
+                    <span className="text-xs font-medium">{feature.title}</span>
+                  </TabsTrigger>
+                ))}
+              </TabsList>
+            </div>
             
             <div className="bg-white rounded-xl shadow-lg p-6 md:p-8 overflow-hidden">
               {activeFeature && (
