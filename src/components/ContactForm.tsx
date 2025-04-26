@@ -18,13 +18,15 @@ const ContactForm = () => {
         <p className="text-lg text-gray-600 mb-8 max-w-2xl mx-auto">
           Мы всегда открыты для сотрудничества и готовы ответить на все ваши вопросы
         </p>
-        <Button 
-          className="bg-[#9b87f5] hover:bg-[#7E69AB] flex items-center gap-2"
-          onClick={openTelegram}
-        >
-          <TelegramIcon />
-          <span>Связаться с нами</span>
-        </Button>
+        <div className="flex justify-center">
+          <Button 
+            className="bg-[#9b87f5] hover:bg-[#7E69AB] flex items-center gap-2"
+            onClick={openTelegram}
+          >
+            <TelegramIcon />
+            <span>Связаться с нами</span>
+          </Button>
+        </div>
       </div>
     </section>
   );
