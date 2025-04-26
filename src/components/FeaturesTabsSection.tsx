@@ -1,9 +1,11 @@
-import React, { useState } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import { Tabs, TabsList, TabsTrigger, TabsContent } from "@/components/ui/tabs";
 import { Zap, Coins, Image, Sparkles, Shield, BarChart3 } from "lucide-react";
 
 const FeaturesTabsSection = () => {
   const [activeTab, setActiveTab] = useState("economy");
+  const [userInteracted, setUserInteracted] = useState(false);
+  const intervalRef = useRef<number | null>(null);
   
   const features = [
     {
@@ -43,12 +45,41 @@ const FeaturesTabsSection = () => {
     },
     {
       id: "scalability",
-      title: "Масштабируемость",
+      title: "Масштаб",
       description: "Нет ограничений по объему и количеству запросов. Нуждаетесь в сотне изображений или в тысяче? Система справится с любой нагрузкой и объемом заказов, поддерживая ваши самые амбициозные маркетинговые кампании.",
       icon: <BarChart3 size={32} className="text-[#9b87f5]" />,
       imageUrl: "https://cdn.poehali.dev/files/bfdc3d6d-31ea-4e1c-af96-ab13c4303c0e.png"
     }
   ];
+  
+  // Автоматическое переключение вкладок
+  useEffect(() => {
+    if (!userInteracted) {
+      intervalRef.current = window.setInterval(() => {
+        setActiveTab(current => {
+          const currentIndex = features.findIndex(f => f.id === current);
+          const nextIndex = (currentIndex + 1) % features.length;
+          return features[nextIndex].id;
+        });
+      }, 5000); // Переключение каждые 5 секунд
+    }
+
+    return () => {
+      if (intervalRef.current) {
+        window.clearInterval(intervalRef.current);
+      }
+    };
+  }, [userInteracted, features]);
+
+  const handleTabChange = (value: string) => {
+    setActiveTab(value);
+    setUserInteracted(true);
+    
+    // Очистить интервал при взаимодействии пользователя
+    if (intervalRef.current) {
+      window.clearInterval(intervalRef.current);
+    }
+  };
   
   // Находим активный feature по id
   const activeFeature = features.find(feature => feature.id === activeTab);
@@ -64,7 +95,7 @@ const FeaturesTabsSection = () => {
         </div>
         
         <div className="relative max-w-5xl mx-auto">
-          <Tabs defaultValue="economy" value={activeTab} onValueChange={setActiveTab} className="w-full">
+          <Tabs defaultValue="economy" value={activeTab} onValueChange={handleTabChange} className="w-full">
             <div className="relative mb-32 md:mb-16">
               <TabsList className="grid grid-cols-3 md:grid-cols-6 gap-4 md:gap-3 bg-transparent p-0">
                 {features.map((feature) => (
