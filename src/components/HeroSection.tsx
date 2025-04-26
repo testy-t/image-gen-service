@@ -42,7 +42,7 @@ const HeroSection = ({ onContactClick }: HeroSectionProps) => {
               Оптовый Flux в России, <span className="text-[#9b87f5]">1 ₽</span> за мегапиксель
             </h1>
             <p className="text-lg md:text-xl mb-4 text-gray-700">
-              Flux Ru — сервис для мгновенной генерации уникальных изображений по текстовому запросу.
+              RussFlux — сервис для мгновенной генерации уникальных изображений по текстовому запросу.
             </p>
             <p className="text-lg mb-8 text-gray-700 bg-[#F0F7FF] p-3 rounded-lg border border-[#E0EEFF]">
               Картинка 1000×1000 пикселей = <span className="font-bold text-[#9b87f5]">1 рубль</span>

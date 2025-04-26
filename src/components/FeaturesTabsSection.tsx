@@ -57,26 +57,28 @@ const FeaturesTabsSection = () => {
     <section id="features" className="py-20 bg-gray-50">
       <div className="container mx-auto px-4">
         <div className="text-center mb-12">
-          <h2 className="text-3xl md:text-4xl font-bold mb-4">Выгоды для мобильного оператора</h2>
+          <h2 className="text-3xl md:text-4xl font-bold mb-4">Выгоды для вашего бизнеса</h2>
           <p className="text-lg text-gray-600 max-w-2xl mx-auto">
-            Flux Ru предлагает революционное решение для вашего маркетингового департамента
+            RussFlux предлагает революционное решение для создания высококачественного визуального контента
           </p>
         </div>
         
         <div className="max-w-5xl mx-auto">
           <Tabs defaultValue="economy" value={activeTab} onValueChange={setActiveTab} className="w-full">
-            <TabsList className="grid grid-cols-3 md:grid-cols-6 gap-2 bg-transparent p-0 mb-12">
-              {features.map((feature) => (
-                <TabsTrigger 
-                  key={feature.id} 
-                  value={feature.id}
-                  className="flex flex-col items-center py-3 px-2 data-[state=active]:bg-white data-[state=active]:text-[#9b87f5] data-[state=active]:shadow-md rounded-lg transition-all gap-2"
-                >
-                  <div className="text-2xl">{feature.icon}</div>
-                  <span className="text-xs font-medium">{feature.title}</span>
-                </TabsTrigger>
-              ))}
-            </TabsList>
+            <div className="overflow-x-auto pb-4 mb-8">
+              <TabsList className="inline-flex min-w-full md:grid md:grid-cols-6 gap-3 bg-transparent p-0">
+                {features.map((feature) => (
+                  <TabsTrigger 
+                    key={feature.id} 
+                    value={feature.id}
+                    className="min-w-[100px] flex flex-col items-center py-3 px-2 data-[state=active]:bg-white data-[state=active]:text-[#9b87f5] data-[state=active]:shadow-md rounded-lg transition-all gap-2"
+                  >
+                    <div className="text-2xl">{feature.icon}</div>
+                    <span className="text-xs font-medium">{feature.title}</span>
+                  </TabsTrigger>
+                ))}
+              </TabsList>
+            </div>
             
             <div className="bg-white rounded-xl shadow-lg p-6 md:p-8 overflow-hidden">
               {activeFeature && (

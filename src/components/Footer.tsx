@@ -14,9 +14,9 @@ const Footer = () => {
           <div className="mb-6 md:mb-0">
             <div className="flex items-center gap-2 mb-4">
               <div className="w-8 h-8 bg-gradient-to-br from-[#9b87f5] to-[#6E59A5] rounded-lg flex items-center justify-center">
-                <span className="text-white font-bold text-lg">F</span>
+                <span className="text-white font-bold text-lg">R</span>
               </div>
-              <span className="font-bold text-lg">Flux Ru</span>
+              <span className="font-bold text-lg">RussFlux</span>
             </div>
             <p className="text-gray-400 max-w-md">
               Революционный сервис генерации изображений по 1₽ за мегапиксель
@@ -49,7 +49,7 @@ const Footer = () => {
         </div>
         
         <div className="border-t border-gray-800 mt-8 pt-8 text-center text-gray-500">
-          <p>© {currentYear} Flux Ru. Все права защищены</p>
+          <p>© {currentYear} RussFlux. Все права защищены</p>
         </div>
       </div>
     </footer>
