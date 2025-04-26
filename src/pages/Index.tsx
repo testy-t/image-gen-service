@@ -8,12 +8,6 @@ import ContactForm from "@/components/ContactForm";
 import Footer from "@/components/Footer";
 
 const IndexPage = () => {
-  const [contactRef, setContactRef] = useState<HTMLDivElement | null>(null);
-
-  const scrollToContact = () => {
-    contactRef?.scrollIntoView({ behavior: 'smooth' });
-  };
-
   return (
     <div className="min-h-screen flex flex-col">
       <Header />
@@ -22,9 +16,7 @@ const IndexPage = () => {
         <FeaturesTabsSection />
         <ProcessSection />
         <PricingSection onContactClick={() => window.open('https://t.me/qanelph', '_blank')} />
-        <div ref={setContactRef}>
-          <ContactForm />
-        </div>
+        <ContactForm />
       </main>
       <Footer />
     </div>
