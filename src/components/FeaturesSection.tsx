@@ -42,7 +42,7 @@ const FeaturesSection = () => {
         <div className="text-center mb-12">
           <h2 className="text-3xl md:text-4xl font-bold mb-4">Выгоды для мобильного оператора</h2>
           <p className="text-lg text-gray-600 max-w-2xl mx-auto">
-            Flux Ru предлагает революционное решение для вашего маркетингового департамента
+            Flux Schnell предлагает революционное решение для вашего маркетингового департамента
           </p>
         </div>
         
@@ -57,8 +57,8 @@ const FeaturesSection = () => {
             <div className="flex flex-col md:flex-row items-center gap-6">
               <div className="flex-shrink-0 bg-[#9b87f5]/10 p-4 rounded-full">
                 <img 
-                  src="https://cdn.poehali.dev/files/ea8cc35c-52a7-4de2-973d-11c37ad63b2e.svg" 
-                  alt="Telegram" 
+                  src="https://cdn.poehali.dev/files/a3222366-d8fc-4e3d-b3e3-6563b4f6ca1c.png" 
+                  alt="Flux Schnell" 
                   className="w-16 h-16"
                 />
               </div>
@@ -105,22 +105,36 @@ const Feature = ({
     >
       <div className="opacity-0 group-hover/feature:opacity-100 transition duration-200 absolute inset-0 h-full w-full bg-gradient-to-t from-[#9b87f5]/5 to-transparent pointer-events-none rounded-lg" />
       
-      <div className="mb-4 relative z-10 text-neutral-600">
-        <div className="bg-white p-3 rounded-xl inline-flex items-center justify-center shadow-sm group-hover/feature:shadow transform group-hover/feature:scale-110 transition-transform duration-300">
-          {icon}
+      <div className="flex flex-col h-full justify-between">
+        <div>
+          <div className="mb-4 relative z-10 text-neutral-600">
+            <div className="bg-white p-3 rounded-xl inline-flex items-center justify-center shadow-sm group-hover/feature:shadow transform group-hover/feature:scale-110 transition-transform duration-300">
+              {icon}
+            </div>
+          </div>
+          
+          <div className="text-lg font-bold mb-2 relative z-10">
+            <div className="absolute left-0 inset-y-0 h-6 group-hover/feature:h-8 w-1 rounded-tr-full rounded-br-full bg-neutral-300 dark:bg-neutral-700 group-hover/feature:bg-[#9b87f5] transition-all duration-200 origin-center" />
+            <span className="group-hover/feature:translate-x-2 transition duration-200 inline-block text-neutral-800 dark:text-neutral-100">
+              {title}
+            </span>
+          </div>
+          
+          <p className="text-sm text-neutral-600 dark:text-neutral-300 relative z-10 mb-4">
+            {description}
+          </p>
+        </div>
+        
+        <div className="mt-auto relative z-10">
+          <div className="w-full h-24 rounded-lg overflow-hidden">
+            <img 
+              src={`https://source.unsplash.com/featured/?${title.toLowerCase()},digital,ai`} 
+              alt={title}
+              className="w-full h-full object-cover transform group-hover/feature:scale-105 transition-transform duration-300"
+            />
+          </div>
         </div>
       </div>
-      
-      <div className="text-lg font-bold mb-2 relative z-10">
-        <div className="absolute left-0 inset-y-0 h-6 group-hover/feature:h-8 w-1 rounded-tr-full rounded-br-full bg-neutral-300 dark:bg-neutral-700 group-hover/feature:bg-[#9b87f5] transition-all duration-200 origin-center" />
-        <span className="group-hover/feature:translate-x-2 transition duration-200 inline-block text-neutral-800 dark:text-neutral-100">
-          {title}
-        </span>
-      </div>
-      
-      <p className="text-sm text-neutral-600 dark:text-neutral-300 relative z-10">
-        {description}
-      </p>
     </div>
   );
 };
