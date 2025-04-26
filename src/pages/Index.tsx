@@ -1,29 +1,34 @@
-import { Button } from "@/components/ui/button";
 import { useState } from "react";
 import Header from "@/components/Header";
 import HeroSection from "@/components/HeroSection";
-import FeaturesSection from "@/components/FeaturesSection";
+import FeaturesTabsSection from "@/components/FeaturesTabsSection";
 import ProcessSection from "@/components/ProcessSection";
 import PricingSection from "@/components/PricingSection";
 import ContactForm from "@/components/ContactForm";
 import Footer from "@/components/Footer";
 
-const Index = () => {
-  const [showContactForm, setShowContactForm] = useState(false);
-  
+const IndexPage = () => {
+  const [contactRef, setContactRef] = useState<HTMLDivElement | null>(null);
+
+  const scrollToContact = () => {
+    contactRef?.scrollIntoView({ behavior: 'smooth' });
+  };
+
   return (
-    <div className="min-h-screen bg-gradient-to-b from-[#f2fcff] to-[#f5f0ff]">
+    <div className="min-h-screen flex flex-col">
       <Header />
-      <main>
-        <HeroSection onContactClick={() => setShowContactForm(true)} />
-        <FeaturesSection />
+      <main className="flex-grow">
+        <HeroSection onContactClick={() => window.open('https://t.me/qanelph', '_blank')} />
+        <FeaturesTabsSection />
         <ProcessSection />
-        <PricingSection onContactClick={() => setShowContactForm(true)} />
-        {showContactForm && <ContactForm onClose={() => setShowContactForm(false)} />}
+        <PricingSection onContactClick={() => window.open('https://t.me/qanelph', '_blank')} />
+        <div ref={setContactRef}>
+          <ContactForm />
+        </div>
       </main>
       <Footer />
     </div>
   );
 };
 
-export default Index;
+export default IndexPage;

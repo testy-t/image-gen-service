@@ -1,39 +1,39 @@
 import React from "react";
+import { cn } from "@/lib/utils";
 import { Zap, Coins, Image, Sparkles, Shield, BarChart3 } from "lucide-react";
-import { Card, CardContent } from "@/components/ui/card";
 
 const FeaturesSection = () => {
   const features = [
     {
-      icon: <Zap size={32} className="text-[#9b87f5]" />,
       title: "Скорость",
-      description: "Генерация изображений за секунды вместо часов работы дизайнера"
+      description: "Генерация изображений за секунды вместо часов работы дизайнера",
+      icon: <Zap size={24} className="text-[#9b87f5]" />,
     },
     {
-      icon: <Coins size={32} className="text-[#9b87f5]" />,
       title: "Экономия",
-      description: "Всего 1 ₽ за мегапиксель при любом объеме заказа"
+      description: "Всего 1 ₽ за мегапиксель при любом объеме заказа",
+      icon: <Coins size={24} className="text-[#9b87f5]" />,
     },
     {
-      icon: <Image size={32} className="text-[#9b87f5]" />,
       title: "Уникальность",
-      description: "Каждое изображение создается с нуля под вашу задачу"
+      description: "Каждое изображение создается с нуля под вашу задачу",
+      icon: <Image size={24} className="text-[#9b87f5]" />,
     },
     {
-      icon: <Sparkles size={32} className="text-[#9b87f5]" />,
       title: "Интеграция",
-      description: "Простое API-подключение без дополнительных вложений"
+      description: "Простое API-подключение без дополнительных вложений",
+      icon: <Sparkles size={24} className="text-[#9b87f5]" />,
     },
     {
-      icon: <Shield size={32} className="text-[#9b87f5]" />,
       title: "Безопасность",
-      description: "Прямые платежи, полное соответствие законодательству РФ"
+      description: "Прямые платежи, полное соответствие законодательству РФ",
+      icon: <Shield size={24} className="text-[#9b87f5]" />,
     },
     {
-      icon: <BarChart3 size={32} className="text-[#9b87f5]" />,
       title: "Масштабируемость",
-      description: "Без ограничений по объему и количеству запросов"
-    }
+      description: "Без ограничений по объему и количеству запросов",
+      icon: <BarChart3 size={24} className="text-[#9b87f5]" />,
+    },
   ];
   
   return (
@@ -46,24 +46,12 @@ const FeaturesSection = () => {
           </p>
         </div>
         
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 relative z-10 max-w-6xl mx-auto">
           {features.map((feature, index) => (
-            <Card 
-              key={index} 
-              className="border-none shadow-lg hover:shadow-xl transition-all duration-300 overflow-hidden group"
-            >
-              <div className="absolute inset-0 bg-gradient-to-br from-[#9b87f5]/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-              <CardContent className="p-6">
-                <div className="bg-white p-3 rounded-xl inline-flex items-center justify-center mb-4 shadow-sm group-hover:shadow transform group-hover:scale-110 transition-transform duration-300">
-                  {feature.icon}
-                </div>
-                <h3 className="text-xl font-bold mb-2">{feature.title}</h3>
-                <p className="text-gray-600">{feature.description}</p>
-              </CardContent>
-            </Card>
+            <Feature key={index} {...feature} index={index} />
           ))}
         </div>
-
+        
         <div className="mt-16 flex justify-center">
           <div className="p-6 md:p-8 bg-white rounded-xl shadow-lg max-w-3xl">
             <div className="flex flex-col md:flex-row items-center gap-6">
@@ -93,6 +81,47 @@ const FeaturesSection = () => {
         </div>
       </div>
     </section>
+  );
+};
+
+const Feature = ({
+  title,
+  description,
+  icon,
+  index,
+}: {
+  title: string;
+  description: string;
+  icon: React.ReactNode;
+  index: number;
+}) => {
+  return (
+    <div
+      className={cn(
+        "flex flex-col border-b py-10 px-6 relative group/feature dark:border-neutral-800 hover:bg-white hover:shadow-lg transition-all duration-300",
+        (index === 0 || index === 3) && "lg:border-l dark:border-neutral-800",
+        index < 3 && "lg:border-b dark:border-neutral-800"
+      )}
+    >
+      <div className="opacity-0 group-hover/feature:opacity-100 transition duration-200 absolute inset-0 h-full w-full bg-gradient-to-t from-[#9b87f5]/5 to-transparent pointer-events-none rounded-lg" />
+      
+      <div className="mb-4 relative z-10 text-neutral-600">
+        <div className="bg-white p-3 rounded-xl inline-flex items-center justify-center shadow-sm group-hover/feature:shadow transform group-hover/feature:scale-110 transition-transform duration-300">
+          {icon}
+        </div>
+      </div>
+      
+      <div className="text-lg font-bold mb-2 relative z-10">
+        <div className="absolute left-0 inset-y-0 h-6 group-hover/feature:h-8 w-1 rounded-tr-full rounded-br-full bg-neutral-300 dark:bg-neutral-700 group-hover/feature:bg-[#9b87f5] transition-all duration-200 origin-center" />
+        <span className="group-hover/feature:translate-x-2 transition duration-200 inline-block text-neutral-800 dark:text-neutral-100">
+          {title}
+        </span>
+      </div>
+      
+      <p className="text-sm text-neutral-600 dark:text-neutral-300 relative z-10">
+        {description}
+      </p>
+    </div>
   );
 };
 
