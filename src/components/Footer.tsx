@@ -10,7 +10,7 @@ const Footer = () => {
   return (
     <footer className="bg-gray-900 text-white py-12">
       <div className="container mx-auto px-4">
-        <div className="flex flex-col md:flex-row justify-between items-center">
+        <div className="flex flex-col md:flex-row justify-between items-start">
           <div className="mb-6 md:mb-0">
             <div className="flex items-center gap-2 mb-4">
               <div className="w-8 h-8 bg-gradient-to-br from-[#9b87f5] to-[#6E59A5] rounded-lg flex items-center justify-center">
@@ -18,23 +18,23 @@ const Footer = () => {
               </div>
               <span className="font-bold text-lg">RussFlux</span>
             </div>
-            <p className="text-gray-400 max-w-md">
+            <p className="text-gray-400 max-w-md text-left">
               Революционный сервис генерации изображений по 1₽ за мегапиксель
             </p>
           </div>
           
-          <div className="flex flex-col sm:flex-row gap-8">
-            <div className="flex flex-col items-center sm:items-start">
-              <h4 className="font-bold mb-4">Навигация</h4>
-              <ul className="space-y-2">
+          <div className="flex flex-row gap-8 items-start">
+            <div className="flex flex-col items-start">
+              <h4 className="font-bold mb-4 text-left">Навигация</h4>
+              <ul className="space-y-2 text-left">
                 <li><a href="#features" className="text-gray-400 hover:text-white transition-colors">Выгоды</a></li>
                 <li><a href="#process" className="text-gray-400 hover:text-white transition-colors">Как это работает</a></li>
                 <li><a href="#pricing" className="text-gray-400 hover:text-white transition-colors">Цены</a></li>
               </ul>
             </div>
             
-            <div className="flex flex-col items-center sm:items-start">
-              <h4 className="font-bold mb-4">Контакт</h4>
+            <div className="flex flex-col items-start">
+              <h4 className="font-bold mb-4 text-left">Контакт</h4>
               <a 
                 href="https://t.me/qanelph" 
                 target="_blank" 
