@@ -30,7 +30,7 @@ const HeroSection = ({ onContactClick }: HeroSectionProps) => {
 
   // Иконка Telegram
   const TelegramIcon = () => (
-    <img src="https://cdn.poehali.dev/files/660bc550-01fb-4be0-be7c-576aeeac262e.svg" alt="Telegram" className="w-5 h-5" />
+    <img src="https://cdn.poehali.dev/files/ea8cc35c-52a7-4de2-973d-11c37ad63b2e.svg" alt="Telegram" className="w-5 h-5" />
   );
 
   return (
