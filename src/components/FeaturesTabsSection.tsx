@@ -11,14 +11,14 @@ const FeaturesTabsSection = () => {
       title: "Экономия",
       description: "Существенное снижение затрат на создание визуального контента - всего 1 рубль за мегапиксель, без скрытых платежей и комиссий. Заказ фотосессии или работа дизайнера обойдется в десятки тысяч рублей, а генерация стоит копейки.",
       icon: <Coins size={32} className="text-[#9b87f5]" />,
-      imageUrl: "https://cdn.poehali.dev/files/26041d01-9221-4b43-aecf-0e81d9298494.png" // Поменял изображение
+      imageUrl: "https://cdn.poehali.dev/files/26041d01-9221-4b43-aecf-0e81d9298494.png"
     },
     {
       id: "speed",
       title: "Скорость",
       description: "Генерируйте уникальные изображения за считанные секунды вместо часов ожидания работы дизайнера. Автоматизация процесса позволяет мгновенно получать готовые результаты для любых маркетинговых кампаний.",
       icon: <Zap size={32} className="text-[#9b87f5]" />,
-      imageUrl: "https://cdn.poehali.dev/files/17447968-8ba9-4cc6-94f6-e5501187f927.png" // Поменял изображение
+      imageUrl: "https://cdn.poehali.dev/files/17447968-8ba9-4cc6-94f6-e5501187f927.png"
     },
     {
       id: "uniqueness",
@@ -63,10 +63,10 @@ const FeaturesTabsSection = () => {
           </p>
         </div>
         
-        <div className="max-w-5xl mx-auto">
+        <div className="relative max-w-5xl mx-auto">
           <Tabs defaultValue="economy" value={activeTab} onValueChange={setActiveTab} className="w-full">
-            <div className="mb-16">
-              <TabsList className="grid grid-cols-3 md:grid-cols-6 gap-3 bg-transparent p-0">
+            <div className="relative mb-32 md:mb-16">
+              <TabsList className="grid grid-cols-3 md:grid-cols-6 gap-4 md:gap-3 bg-transparent p-0">
                 {features.map((feature) => (
                   <TabsTrigger 
                     key={feature.id} 
