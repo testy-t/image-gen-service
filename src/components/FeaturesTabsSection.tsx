@@ -96,7 +96,7 @@ const FeaturesTabsSection = () => {
         
         <div className="relative max-w-5xl mx-auto">
           <Tabs defaultValue="economy" value={activeTab} onValueChange={handleTabChange} className="w-full">
-            <div className="relative mb-32 md:mb-16">
+            <div className="relative mb-40 md:mb-16">
               <TabsList className="grid grid-cols-3 md:grid-cols-6 gap-4 md:gap-3 bg-transparent p-0">
                 {features.map((feature) => (
                   <TabsTrigger 
@@ -111,7 +111,7 @@ const FeaturesTabsSection = () => {
               </TabsList>
             </div>
             
-            <div className="bg-white rounded-xl shadow-lg p-6 md:p-8 overflow-hidden">
+            <div className="mt-8 md:mt-0 bg-white rounded-xl shadow-lg p-6 md:p-8 overflow-hidden">
               {activeFeature && (
                 <div 
                   key={activeFeature.id}
