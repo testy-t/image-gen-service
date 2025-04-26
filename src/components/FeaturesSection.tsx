@@ -42,7 +42,7 @@ const FeaturesSection = () => {
         <div className="text-center mb-12">
           <h2 className="text-3xl md:text-4xl font-bold mb-4">Выгоды для мобильного оператора</h2>
           <p className="text-lg text-gray-600 max-w-2xl mx-auto">
-            Flux Schnell предлагает революционное решение для вашего маркетингового департамента
+            RussFlux предлагает революционное решение для вашего маркетингового департамента
           </p>
         </div>
         
@@ -58,7 +58,7 @@ const FeaturesSection = () => {
               <div className="flex-shrink-0 bg-[#9b87f5]/10 p-4 rounded-full">
                 <img 
                   src="https://cdn.poehali.dev/files/a3222366-d8fc-4e3d-b3e3-6563b4f6ca1c.png" 
-                  alt="Flux Schnell" 
+                  alt="RussFlux" 
                   className="w-16 h-16"
                 />
               </div>
@@ -120,12 +120,12 @@ const Feature = ({
             </span>
           </div>
           
-          <p className="text-sm text-neutral-600 dark:text-neutral-300 relative z-10 mb-4">
+          <p className="text-sm text-neutral-600 dark:text-neutral-300 relative z-10">
             {description}
           </p>
         </div>
         
-        <div className="mt-auto relative z-10">
+        <div className="mt-6 relative z-10">
           <div className="w-full h-24 rounded-lg overflow-hidden">
             <img 
               src={`https://source.unsplash.com/featured/?${title.toLowerCase()},digital,ai`} 
