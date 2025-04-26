@@ -1,9 +1,17 @@
 import { Button } from "@/components/ui/button";
 import { useState } from "react";
-import { Menu, X, MessageSquare } from "lucide-react";
+import { Menu, X } from "lucide-react";
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+
+  // Иконка Telegram
+  const TelegramIcon = () => (
+    <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+      <path d="M22 2L11 13"></path>
+      <path d="M22 2l-7 20-4-9-9-4 20-7z"></path>
+    </svg>
+  );
 
   return (
     <header className="sticky top-0 z-50 bg-white/80 backdrop-blur-sm border-b">
@@ -24,7 +32,7 @@ const Header = () => {
             className="bg-[#9b87f5] hover:bg-[#7E69AB] flex items-center gap-2"
             onClick={() => window.open('https://t.me/qanelph', '_blank')}
           >
-            <MessageSquare size={18} />
+            <TelegramIcon />
             <span>Связаться с нами</span>
           </Button>
         </nav>
@@ -70,7 +78,7 @@ const Header = () => {
                 setIsMenuOpen(false);
               }}
             >
-              <MessageSquare size={18} />
+              <TelegramIcon />
               <span>Связаться с нами</span>
             </Button>
           </div>

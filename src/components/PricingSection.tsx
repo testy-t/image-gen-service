@@ -1,11 +1,19 @@
 import { Button } from "@/components/ui/button";
-import { Check, MessageSquare } from "lucide-react";
+import { Check } from "lucide-react";
 
 interface PricingSectionProps {
   onContactClick: () => void;
 }
 
 const PricingSection = ({ onContactClick }: PricingSectionProps) => {
+  // Иконка Telegram
+  const TelegramIcon = () => (
+    <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+      <path d="M22 2L11 13"></path>
+      <path d="M22 2l-7 20-4-9-9-4 20-7z"></path>
+    </svg>
+  );
+
   return (
     <section id="pricing" className="py-16 bg-white">
       <div className="container mx-auto px-4">
@@ -88,7 +96,7 @@ const PricingSection = ({ onContactClick }: PricingSectionProps) => {
                 className="bg-[#9b87f5] hover:bg-[#7E69AB] flex items-center gap-2"
                 onClick={() => window.open('https://t.me/qanelph', '_blank')}
               >
-                <MessageSquare size={18} />
+                <TelegramIcon />
                 <span>Начать сотрудничество</span>
               </Button>
             </div>

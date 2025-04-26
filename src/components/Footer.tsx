@@ -3,6 +3,14 @@ import { MessageSquare } from "lucide-react";
 const Footer = () => {
   const currentYear = new Date().getFullYear();
   
+  // Иконка Telegram
+  const TelegramIcon = () => (
+    <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="group-hover:text-[#9b87f5] transition-colors">
+      <path d="M22 2L11 13"></path>
+      <path d="M22 2l-7 20-4-9-9-4 20-7z"></path>
+    </svg>
+  );
+  
   return (
     <footer className="bg-gray-900 text-white py-12">
       <div className="container mx-auto px-4">
@@ -37,7 +45,7 @@ const Footer = () => {
                 rel="noopener noreferrer" 
                 className="flex items-center gap-2 text-gray-400 hover:text-white transition-colors group"
               >
-                <MessageSquare className="group-hover:text-[#9b87f5] transition-colors" />
+                <TelegramIcon />
                 <span>Telegram</span>
               </a>
             </div>
