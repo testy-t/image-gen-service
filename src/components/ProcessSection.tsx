@@ -25,7 +25,7 @@ const ProcessSection = () => {
         <div className="text-center mb-16">
           <h2 className="text-3xl md:text-4xl font-bold mb-4">Как это работает</h2>
           <p className="text-lg text-gray-600 max-w-2xl mx-auto">
-            Простой процесс интеграции и использования сервиса Flux Schnell
+            Простой процесс интеграции и использования сервиса RussFlux
           </p>
         </div>
         
