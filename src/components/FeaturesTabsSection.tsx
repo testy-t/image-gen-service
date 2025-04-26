@@ -65,22 +65,18 @@ const FeaturesTabsSection = () => {
         
         <div className="max-w-5xl mx-auto">
           <Tabs defaultValue="economy" value={activeTab} onValueChange={setActiveTab} className="w-full">
-            <div className="overflow-x-auto pb-4 mb-8">
-              <div className="min-w-max md:min-w-0">
-                <TabsList className="flex md:grid md:grid-cols-6 gap-3 bg-transparent p-0">
-                  {features.map((feature) => (
-                    <TabsTrigger 
-                      key={feature.id} 
-                      value={feature.id}
-                      className="w-[130px] md:w-auto flex flex-col items-center py-3 px-2 data-[state=active]:bg-white data-[state=active]:text-[#9b87f5] data-[state=active]:shadow-md rounded-lg transition-all gap-2"
-                    >
-                      <div className="text-2xl">{feature.icon}</div>
-                      <span className="text-xs font-medium">{feature.title}</span>
-                    </TabsTrigger>
-                  ))}
-                </TabsList>
-              </div>
-            </div>
+            <TabsList className="grid grid-cols-3 md:grid-cols-6 gap-3 bg-transparent p-0 mb-8">
+              {features.map((feature) => (
+                <TabsTrigger 
+                  key={feature.id} 
+                  value={feature.id}
+                  className="flex flex-col items-center py-3 px-2 data-[state=active]:bg-white data-[state=active]:text-[#9b87f5] data-[state=active]:shadow-md rounded-lg transition-all gap-2"
+                >
+                  <div className="text-2xl">{feature.icon}</div>
+                  <span className="text-xs font-medium">{feature.title}</span>
+                </TabsTrigger>
+              ))}
+            </TabsList>
             
             <div className="bg-white rounded-xl shadow-lg p-6 md:p-8 overflow-hidden">
               {activeFeature && (
