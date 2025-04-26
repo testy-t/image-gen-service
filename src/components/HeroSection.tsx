@@ -1,21 +1,46 @@
 import { Button } from "@/components/ui/button";
 import { ArrowRight, Zap, Image as ImageIcon, DollarSign } from "lucide-react";
+import { 
+  Carousel, 
+  CarouselContent, 
+  CarouselItem, 
+  CarouselNext, 
+  CarouselPrevious 
+} from "@/components/ui/carousel";
 
 interface HeroSectionProps {
   onContactClick: () => void;
 }
 
 const HeroSection = ({ onContactClick }: HeroSectionProps) => {
+  const carouselImages = [
+    {
+      url: "https://cdn.poehali.dev/files/ef34964d-411a-466f-ac4e-03baef17fd3f.png",
+      alt: "Морской пейзаж с волнами и камнями"
+    },
+    {
+      url: "https://cdn.poehali.dev/files/b178ad60-86c9-4eae-85db-41b123dca920.png",
+      alt: "Портрет в красных тонах"
+    },
+    {
+      url: "https://cdn.poehali.dev/files/5a6a2979-bb52-49ee-9300-f7839899b84c.png",
+      alt: "Неоновый астронавт"
+    }
+  ];
+
   return (
     <section className="py-16 md:py-24">
       <div className="container mx-auto px-4">
         <div className="flex flex-col md:flex-row items-center gap-12">
           <div className="flex-1">
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6">
-              Генерация изображений по <span className="text-[#9b87f5]">1 ₽</span> для мобильных операторов
+              Оптовый Flux в России, <span className="text-[#9b87f5]">1 ₽</span> за мегапиксель
             </h1>
-            <p className="text-lg md:text-xl mb-8 text-gray-700">
-              Flux Schnell — сервис для мгновенной генерации уникальных изображений по текстовому запросу. Идеально для маркетинговых кампаний, рекламы и контент-стратегий.
+            <p className="text-lg md:text-xl mb-4 text-gray-700">
+              Flux Schnell — сервис для мгновенной генерации уникальных изображений по текстовому запросу.
+            </p>
+            <p className="text-lg mb-8 text-gray-700 bg-[#F0F7FF] p-3 rounded-lg border border-[#E0EEFF]">
+              <span className="font-medium">Пример:</span> изображение размером 1000×1000 пикселей = 1 мегапиксель = <span className="font-bold text-[#9b87f5]">1 рубль</span>
             </p>
             <div className="flex flex-col sm:flex-row gap-4">
               <Button 
@@ -50,35 +75,28 @@ const HeroSection = ({ onContactClick }: HeroSectionProps) => {
             </div>
           </div>
           
-          <div className="flex-1 grid grid-cols-2 gap-4">
-            <div className="rounded-lg overflow-hidden shadow-lg transform hover:scale-105 transition-transform">
-              <img 
-                src="https://images.unsplash.com/photo-1579546929662-711aa81148cf?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwxfDB8MXxyYW5kb218MHx8YWJzdHJhY3R8fHx8fHwxNzE0MjMyMjg4&ixlib=rb-4.0.3&q=80&w=1080" 
-                alt="Сгенерированное изображение" 
-                className="w-full h-full object-cover"
-              />
-            </div>
-            <div className="rounded-lg overflow-hidden shadow-lg transform translate-y-4 hover:scale-105 transition-transform">
-              <img 
-                src="https://images.unsplash.com/photo-1579546929518-9e396f3cc809?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwxfDB8MXxyYW5kb218MHx8YWJzdHJhY3R8fHx8fHwxNzE0MjMyMjg5&ixlib=rb-4.0.3&q=80&w=1080" 
-                alt="Сгенерированное изображение" 
-                className="w-full h-full object-cover"
-              />
-            </div>
-            <div className="rounded-lg overflow-hidden shadow-lg transform translate-y-2 hover:scale-105 transition-transform">
-              <img 
-                src="https://images.unsplash.com/photo-1499781350541-7783f6c6a0c8?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwxfDB8MXxyYW5kb218MHx8b2NlYW58fHx8fHwxNzE0MjMyMjk0&ixlib=rb-4.0.3&q=80&w=1080" 
-                alt="Сгенерированное изображение" 
-                className="w-full h-full object-cover"
-              />
-            </div>
-            <div className="rounded-lg overflow-hidden shadow-lg transform -translate-y-2 hover:scale-105 transition-transform">
-              <img 
-                src="https://images.unsplash.com/photo-1517479149777-5f3b1511d5ad?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwxfDB8MXxyYW5kb218MHx8ZGlnaXRhbHx8fHx8fDE3MTQyMzIyOTg&ixlib=rb-4.0.3&q=80&w=1080" 
-                alt="Сгенерированное изображение" 
-                className="w-full h-full object-cover"
-              />
-            </div>
+          <div className="flex-1">
+            <Carousel className="w-full max-w-[600px] mx-auto">
+              <CarouselContent>
+                {carouselImages.map((image, index) => (
+                  <CarouselItem key={index}>
+                    <div className="p-1">
+                      <div className="rounded-xl overflow-hidden shadow-xl transform hover:scale-[1.01] transition-transform">
+                        <img 
+                          src={image.url} 
+                          alt={image.alt} 
+                          className="w-full object-cover aspect-square"
+                        />
+                      </div>
+                    </div>
+                  </CarouselItem>
+                ))}
+              </CarouselContent>
+              <div className="flex justify-center mt-4 gap-2">
+                <CarouselPrevious className="static translate-y-0 -ml-0" />
+                <CarouselNext className="static translate-y-0 -mr-0" />
+              </div>
+            </Carousel>
           </div>
         </div>
       </div>
