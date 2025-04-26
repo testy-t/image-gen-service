@@ -65,7 +65,7 @@ const FeaturesTabsSection = () => {
         
         <div className="max-w-5xl mx-auto">
           <Tabs defaultValue="speed" value={activeTab} onValueChange={setActiveTab} className="w-full">
-            <TabsList className="grid grid-cols-3 md:grid-cols-6 gap-2 bg-transparent p-0">
+            <TabsList className="grid grid-cols-3 md:grid-cols-6 gap-2 bg-transparent p-0 mb-12">
               {features.map((feature) => (
                 <TabsTrigger 
                   key={feature.id} 
@@ -78,7 +78,7 @@ const FeaturesTabsSection = () => {
               ))}
             </TabsList>
             
-            <div className="mt-8 bg-white rounded-xl shadow-lg p-6 md:p-8 overflow-hidden">
+            <div className="bg-white rounded-xl shadow-lg p-6 md:p-8 overflow-hidden">
               {activeFeature && (
                 <div 
                   key={activeFeature.id}
@@ -110,34 +110,6 @@ const FeaturesTabsSection = () => {
               )}
             </div>
           </Tabs>
-        </div>
-        
-        <div className="mt-16 flex justify-center">
-          <div className="p-6 md:p-8 bg-white rounded-xl shadow-lg max-w-3xl">
-            <div className="flex flex-col md:flex-row items-center gap-6">
-              <div className="flex-shrink-0 bg-[#9b87f5]/10 p-4 rounded-full">
-                <img 
-                  src="https://cdn.poehali.dev/files/ea8cc35c-52a7-4de2-973d-11c37ad63b2e.svg" 
-                  alt="Telegram" 
-                  className="w-16 h-16"
-                />
-              </div>
-              <div>
-                <h3 className="text-xl font-bold mb-2">Готовы начать?</h3>
-                <p className="text-gray-600 mb-4">
-                  Протестируйте сервис на реальных кейсах в течение 1 дня. Без обязательств.
-                </p>
-                <a 
-                  href="https://t.me/qanelph"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="inline-flex items-center gap-2 text-[#9b87f5] font-medium hover:text-[#7E69AB] transition-colors"
-                >
-                  Связаться в Telegram <span className="text-lg">→</span>
-                </a>
-              </div>
-            </div>
-          </div>
         </div>
       </div>
     </section>
