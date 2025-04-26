@@ -38,9 +38,9 @@ const HeroSection = ({ onContactClick }: HeroSectionProps) => {
       <div className="container mx-auto px-4">
         <div className="flex flex-col md:flex-row items-center gap-8 md:gap-12">
           <div className="flex-1">
-            {/* Заголовок идет первым */}
+            {/* Заголовок идет первым с переносом на мобильных */}
             <h1 className="text-3xl md:text-5xl lg:text-6xl font-bold mb-4 md:mb-6 text-center md:text-left">
-              Оптовый Flux в России, <span className="text-[#9b87f5]">1 ₽</span> за мегапиксель
+              Оптовый Flux в России,<br className="md:hidden" /> <span className="text-[#9b87f5]">1 ₽</span> за мегапиксель
             </h1>
             
             {/* Карусель для мобильных устройств (после заголовка) */}
