@@ -11,35 +11,35 @@ const FeaturesTabsSection = () => {
       title: "Скорость",
       description: "Генерируйте уникальные изображения за считанные секунды вместо часов ожидания работы дизайнера. Автоматизация процесса позволяет мгновенно получать готовые результаты для любых маркетинговых кампаний.",
       icon: <Zap size={32} className="text-[#9b87f5]" />,
-      imageUrl: "https://images.unsplash.com/photo-1494253109108-2e30c049369b?q=80&w=1000&auto=format&fit=crop"
+      imageUrl: "https://cdn.poehali.dev/files/26041d01-9221-4b43-aecf-0e81d9298494.png"
     },
     {
       id: "economy",
       title: "Экономия",
       description: "Существенное снижение затрат на создание визуального контента - всего 1 рубль за мегапиксель, без скрытых платежей и комиссий. Заказ фотосессии или работа дизайнера обойдется в десятки тысяч рублей, а генерация стоит копейки.",
       icon: <Coins size={32} className="text-[#9b87f5]" />,
-      imageUrl: "https://images.unsplash.com/photo-1579621970588-a35d0e7ab9b6?q=80&w=1000&auto=format&fit=crop"
+      imageUrl: "https://cdn.poehali.dev/files/17447968-8ba9-4cc6-94f6-e5501187f927.png"
     },
     {
       id: "uniqueness",
       title: "Уникальность",
       description: "Каждое изображение создается с нуля специально под ваш запрос. Никаких шаблонов или повторений - только оригинальный контент, который идеально соответствует вашим требованиям и брендбуку.",
       icon: <Image size={32} className="text-[#9b87f5]" />,
-      imageUrl: "https://images.unsplash.com/photo-1551434678-e076c223a692?q=80&w=1000&auto=format&fit=crop"
+      imageUrl: "https://cdn.poehali.dev/files/95d46a3f-11e9-4aa8-8662-9966c43a0285.png"
     },
     {
       id: "integration",
       title: "Интеграция",
       description: "Простое API-подключение без необходимости дополнительных инвестиций в программное обеспечение. Интегрируйте генерацию изображений напрямую в ваши существующие системы и рабочие процессы.",
       icon: <Sparkles size={32} className="text-[#9b87f5]" />,
-      imageUrl: "https://images.unsplash.com/photo-1581092335397-9fa52cc72c30?q=80&w=1000&auto=format&fit=crop"
+      imageUrl: "https://cdn.poehali.dev/files/f444771a-94ef-4218-9416-0547fc10fe39.png"
     },
     {
       id: "security",
       title: "Безопасность",
       description: "Прямые платежи на ИП, полное соответствие законодательству РФ. Все данные и сгенерированные изображения защищены и принадлежат только вам, без каких-либо ограничений на использование.",
       icon: <Shield size={32} className="text-[#9b87f5]" />,
-      imageUrl: "https://images.unsplash.com/photo-1614064641938-3bbee52942c7?q=80&w=1000&auto=format&fit=crop"
+      imageUrl: "https://cdn.poehali.dev/files/6affc9d8-1365-4e5d-b437-5830135cb6fa.png"
     },
     {
       id: "scalability",
@@ -102,7 +102,7 @@ const FeaturesTabsSection = () => {
                       <img 
                         src={activeFeature.imageUrl} 
                         alt={activeFeature.title}
-                        className="w-full h-48 md:h-64 object-cover"
+                        className="w-full h-48 md:h-64 object-contain bg-[#f7f9fc]"
                       />
                     </div>
                   </div>
