@@ -12,7 +12,7 @@ const Header = () => {
           <div className="w-10 h-10 bg-gradient-to-br from-[#9b87f5] to-[#6E59A5] rounded-lg flex items-center justify-center">
             <span className="text-white font-bold text-xl">F</span>
           </div>
-          <span className="font-bold text-xl">Flux Schnell</span>
+          <span className="font-bold text-xl">Flux Ru</span>
         </div>
         
         {/* Desktop Navigation */}

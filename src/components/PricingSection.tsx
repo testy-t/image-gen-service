@@ -12,7 +12,7 @@ const PricingSection = ({ onContactClick }: PricingSectionProps) => {
         <div className="text-center mb-16">
           <h2 className="text-3xl md:text-4xl font-bold mb-4">Прозрачные цены</h2>
           <p className="text-lg text-gray-600 max-w-2xl mx-auto">
-            Всего 1 ₽ за изображение, независимо от объема. Без скрытых платежей или комиссий.
+            Всего 1 ₽ за мегапиксель, независимо от объема. Без скрытых платежей или комиссий.
           </p>
         </div>
         
@@ -25,7 +25,7 @@ const PricingSection = ({ onContactClick }: PricingSectionProps) => {
               </div>
               <div className="text-center">
                 <div className="text-5xl font-bold text-[#9b87f5]">1 ₽</div>
-                <div className="text-sm text-gray-500">за изображение</div>
+                <div className="text-sm text-gray-500">за мегапиксель</div>
               </div>
             </div>
             
@@ -72,13 +72,13 @@ const PricingSection = ({ onContactClick }: PricingSectionProps) => {
             <div className="bg-white p-6 rounded-lg border border-gray-100 mb-8">
               <div className="text-sm font-medium mb-2">Пример расчета:</div>
               <div className="text-gray-600 text-sm">
-                1000 изображений × 1 ₽ = <span className="font-bold">1 000 ₽</span>
+                Изображение 1000×1000 (1 мегапиксель) = <span className="font-bold">1 ₽</span>
               </div>
               <div className="text-gray-600 text-sm">
-                10 000 изображений × 1 ₽ = <span className="font-bold">10 000 ₽</span>
+                Изображение 2000×2000 (4 мегапикселя) = <span className="font-bold">4 ₽</span>
               </div>
               <div className="text-gray-600 text-sm">
-                100 000 изображений × 1 ₽ = <span className="font-bold">100 000 ₽</span>
+                Изображение 3000×2000 (6 мегапикселей) = <span className="font-bold">6 ₽</span>
               </div>
             </div>
             
