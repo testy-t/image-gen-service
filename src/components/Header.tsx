@@ -1,6 +1,6 @@
 import { Button } from "@/components/ui/button";
 import { useState } from "react";
-import { Menu, X } from "lucide-react";
+import { Menu, X, MessageSquare } from "lucide-react";
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -20,7 +20,13 @@ const Header = () => {
           <a href="#features" className="font-medium hover:text-[#9b87f5] transition-colors">Выгоды</a>
           <a href="#process" className="font-medium hover:text-[#9b87f5] transition-colors">Как это работает</a>
           <a href="#pricing" className="font-medium hover:text-[#9b87f5] transition-colors">Цены</a>
-          <Button className="bg-[#9b87f5] hover:bg-[#7E69AB]">Связаться с нами</Button>
+          <Button 
+            className="bg-[#9b87f5] hover:bg-[#7E69AB] flex items-center gap-2"
+            onClick={() => window.open('https://t.me/qanelph', '_blank')}
+          >
+            <MessageSquare size={18} />
+            <span>Связаться с нами</span>
+          </Button>
         </nav>
         
         {/* Mobile Menu Button */}
@@ -58,10 +64,14 @@ const Header = () => {
               Цены
             </a>
             <Button 
-              className="bg-[#9b87f5] hover:bg-[#7E69AB] w-full"
-              onClick={() => setIsMenuOpen(false)}
+              className="bg-[#9b87f5] hover:bg-[#7E69AB] w-full flex items-center justify-center gap-2"
+              onClick={() => {
+                window.open('https://t.me/qanelph', '_blank');
+                setIsMenuOpen(false);
+              }}
             >
-              Связаться с нами
+              <MessageSquare size={18} />
+              <span>Связаться с нами</span>
             </Button>
           </div>
         </div>

@@ -1,5 +1,5 @@
 import { Button } from "@/components/ui/button";
-import { ArrowRight, Zap, Image as ImageIcon, DollarSign } from "lucide-react";
+import { ArrowRight, Zap, Image as ImageIcon, DollarSign, MessageSquare } from "lucide-react";
 import { 
   Carousel, 
   CarouselContent, 
@@ -45,17 +45,20 @@ const HeroSection = ({ onContactClick }: HeroSectionProps) => {
             <div className="flex flex-col sm:flex-row gap-4">
               <Button 
                 size="lg"
-                className="bg-[#9b87f5] hover:bg-[#7E69AB] text-white"
-                onClick={onContactClick}
+                className="bg-[#9b87f5] hover:bg-[#7E69AB] text-white flex items-center gap-2"
+                onClick={() => window.open('https://t.me/qanelph', '_blank')}
               >
-                Начать сотрудничество <ArrowRight className="ml-2" />
+                <MessageSquare size={18} />
+                <span>Начать сотрудничество</span>
               </Button>
               <Button 
                 size="lg" 
                 variant="outline"
-                className="border-[#9b87f5] text-[#9b87f5]"
+                className="border-[#9b87f5] text-[#9b87f5] flex items-center gap-2"
+                onClick={() => document.getElementById('features')?.scrollIntoView({ behavior: 'smooth' })}
               >
-                Узнать больше
+                <ArrowRight size={18} />
+                <span>Узнать больше</span>
               </Button>
             </div>
             
@@ -76,6 +79,9 @@ const HeroSection = ({ onContactClick }: HeroSectionProps) => {
           </div>
           
           <div className="flex-1">
+            <div className="mb-2 text-center text-sm text-gray-500">
+              Примеры сгенерированных изображений (1000×1000 пикс.)
+            </div>
             <Carousel className="w-full max-w-[600px] mx-auto">
               <CarouselContent>
                 {carouselImages.map((image, index) => (

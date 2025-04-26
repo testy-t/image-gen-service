@@ -38,7 +38,7 @@ const Footer = () => {
                 className="flex items-center gap-2 text-gray-400 hover:text-white transition-colors group"
               >
                 <MessageSquare className="group-hover:text-[#9b87f5] transition-colors" />
-                <span>Telegram — t.me/qanelph</span>
+                <span>Telegram</span>
               </a>
             </div>
           </div>

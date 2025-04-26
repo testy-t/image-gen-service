@@ -1,5 +1,5 @@
 import { Button } from "@/components/ui/button";
-import { Check } from "lucide-react";
+import { Check, MessageSquare } from "lucide-react";
 
 interface PricingSectionProps {
   onContactClick: () => void;
@@ -85,10 +85,11 @@ const PricingSection = ({ onContactClick }: PricingSectionProps) => {
             <div className="text-center">
               <Button 
                 size="lg" 
-                className="bg-[#9b87f5] hover:bg-[#7E69AB]"
-                onClick={onContactClick}
+                className="bg-[#9b87f5] hover:bg-[#7E69AB] flex items-center gap-2"
+                onClick={() => window.open('https://t.me/qanelph', '_blank')}
               >
-                Начать сотрудничество
+                <MessageSquare size={18} />
+                <span>Начать сотрудничество</span>
               </Button>
             </div>
           </div>
